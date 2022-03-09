@@ -8,7 +8,7 @@ def run(data, bot_info, send):
     f = open("lineIndex.txt", "r", encoding="utf-8")
     line = f.readline()
     print(line)
-    lineIndex = int(line.strip()[0])
+    lineIndex = int(line.strip())
     f.close()
     print("reading line index", lineIndex)
 
