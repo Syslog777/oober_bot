@@ -18,7 +18,18 @@ def run(data, bot_info, send):
         return True
     
     if message == "next":
-        
+        randomLine = random.choice(lines).strip().split(",")
+        prompt = randomLine[0]
+        answers = []
+        i = 1
+        while i in range(len(randomLine)-1):
+            answers.append([randomLine[i], randomLine[i+1]])
+            i += 2
+
+        #print(prompt)
+        #print(answers)
+        msg = prompt + answers
+        send(msg, bot_info[0])
 
     #send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
     return True
