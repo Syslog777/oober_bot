@@ -119,9 +119,9 @@ def webhook():
         return "ok", 200
 
     if data['group_id'] in GROUP_RULES:
-        if GROUP_RULES[data['group_id']].run(data, BOT_INFO[data['group_id']], send_message):
+        if GROUP_RULES[data['group_id']].run(data, BOT_INFO[data['group_id']], send_message, curLine):
             return "ok", 200
 
-    curLine = GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
+    curLine = GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message, curLine)
 
     return "ok", 200
