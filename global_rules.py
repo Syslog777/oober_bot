@@ -25,6 +25,20 @@ def run(data, bot_info, send):
         return True
     
     if message == ".next":
+        
+        randomLine = lines[lineIndex].strip().split(",")
+        prompt = randomLine[0]
+        answers = {}
+        i = 1
+        while i in range(len(randomLine)-1):
+            answers[randomLine[i].strip().lower()] = randomLine[i+1]
+            i += 2
+        
+        msg = "The answers to the previous question were: \n"
+        for key, value in answers.items():
+            msg += str(key) + ": " + str(value) + "\n"
+        send(msg, bot_info[0])
+        
         lineIndex = random.randint(0, len(lines))
         print("writing line index", lineIndex)
         f = open("lineIndex.txt", "w", encoding="utf-8")
