@@ -22,7 +22,7 @@ def run(data, bot_info, send):
         return True
     
     if message == ".next":
-        lineIndex = random.randint(lines)
+        lineIndex = random.randint(0, len(lines))
         f = open("lineIndex.txt", "w", encoding="utf-8")
         f.write(lineIndex)
         f.close()
