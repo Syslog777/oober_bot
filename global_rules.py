@@ -1,4 +1,4 @@
-def run(data, bot_info, send, lineIndex):
+def run(data, bot_info, send):
     
     import random
     random.seed()
