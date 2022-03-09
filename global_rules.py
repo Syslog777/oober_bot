@@ -8,6 +8,7 @@ def run(data, bot_info, send):
     f = open("lineIndex.txt", "r", encoding="utf-8")
     lineIndex = int(f.readline().strip()[0])
     f.close()
+    print("reading line index", lineIndex)
 
     help_message = "Help:\n.help  -->  This screen\n.test  -->  Try it!\nOtherwise, repeats your message."
 
@@ -23,6 +24,7 @@ def run(data, bot_info, send):
     
     if message == ".next":
         lineIndex = random.randint(0, len(lines))
+        print("writing line index", lineIndex)
         f = open("lineIndex.txt", "w", encoding="utf-8")
         f.write(str(lineIndex))
         f.close()
