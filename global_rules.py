@@ -6,7 +6,9 @@ def run(data, bot_info, send):
     lines = f.readlines()
     f.close()
     f = open("lineIndex.txt", "r", encoding="utf-8")
-    lineIndex = int(f.readline().strip()[0])
+    line = f.readline()
+    print(line)
+    lineIndex = int(line.strip()[0])
     f.close()
     print("reading line index", lineIndex)
 
