@@ -24,7 +24,7 @@ def run(data, bot_info, send):
     if message == ".next":
         lineIndex = random.randint(0, len(lines))
         f = open("lineIndex.txt", "w", encoding="utf-8")
-        f.write(lineIndex)
+        f.write(str(lineIndex))
         f.close()
         randomLine = lines[lineIndex].strip().split(",")
         prompt = randomLine[0]
