@@ -30,6 +30,9 @@ def run(data, bot_info, send):
         #print(answers)
         msg = prompt
         send(msg, bot_info[0])
+        
+        data = request.get_json()
+        print(data['text'])
 
     #send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
     return True
