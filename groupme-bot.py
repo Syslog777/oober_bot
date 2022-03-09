@@ -106,6 +106,7 @@ def send_message(msg, bot_id):
 ######################## The actual bot ###############################################################
 
 app = Flask(__name__)
+curLine = 0
 
 @app.route('/', methods=['POST'])
 def webhook():
@@ -121,6 +122,6 @@ def webhook():
         if GROUP_RULES[data['group_id']].run(data, BOT_INFO[data['group_id']], send_message):
             return "ok", 200
 
-    GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
+    curLine = GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
 
     return "ok", 200
