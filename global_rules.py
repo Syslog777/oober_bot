@@ -35,27 +35,27 @@ def run(data, bot_info, send):
             i += 2
 
         #print(prompt)
-        #print(answers)
+        print(answers)
         msg = prompt
         send(msg, bot_info[0])
         
-    randomLine = lines[lineIndex].strip().split(",")
-    prompt = randomLine[0]
-    answers = {}
-    i = 1
-    while i in range(len(randomLine)-1):
-        answers[randomLine[i].strip().lower()] = randomLine[i+1]
-        i += 2
-    
-    messageRaw = message
-    message = message.strip().lower()
-    if message in answers.keys():
-        score = answers[message]
-        send("Congratulations! {} is correct! {} points!".format(messageRaw, score), bot_info[0])
-        
     else:
-        # sorry that's incorrect
-        send("Sorry that's not right", bot_info[0])
+        randomLine = lines[lineIndex].strip().split(",")
+        prompt = randomLine[0]
+        answers = {}
+        i = 1
+        while i in range(len(randomLine)-1):
+            answers[randomLine[i].strip().lower()] = randomLine[i+1]
+            i += 2
+            
+        print(answers)
+
+        messageRaw = message
+        message = message.strip().lower()
+        if message in answers.keys():
+            score = answers[message]
+            send("Congratulations! {} is correct! {} points!".format(messageRaw, score), bot_info[0])
+
         
 
     #send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
