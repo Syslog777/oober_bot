@@ -12,7 +12,7 @@ def run(data, bot_info, send):
         send("Hi there! Your bot is working, you should start customizing it now.", bot_info[0])
         return True
     
-    if message = '123':
+    if message == '123':
         send("456", bot_info[0])
 
     send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
