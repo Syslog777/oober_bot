@@ -28,7 +28,7 @@ def run(data, bot_info, send):
 
         #print(prompt)
         #print(answers)
-        msg = prompt + answers
+        msg = prompt
         send(msg, bot_info[0])
 
     #send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
