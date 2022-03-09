@@ -1,4 +1,4 @@
-def run(data, bot_info, send):
+def run(data, bot_info, send, lineIndex):
     
     import random
     random.seed()
@@ -18,7 +18,8 @@ def run(data, bot_info, send):
         return True
     
     if message == "next":
-        randomLine = random.choice(lines).strip().split(",")
+        lineIndex = random.randint(lines)
+        randomLine = lines[lineIndex].strip().split(",")
         prompt = randomLine[0]
         answers = []
         i = 1
@@ -30,9 +31,7 @@ def run(data, bot_info, send):
         #print(answers)
         msg = prompt
         send(msg, bot_info[0])
-        
-        data = request.get_json()
-        print(data['text'])
+        return lineIndex
 
     #send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
     return True
