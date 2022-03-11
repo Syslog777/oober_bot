@@ -42,6 +42,7 @@ def run(data, bot_info, send):
                 i += 2
             else:
                 prompt.append(randomLine[-(i)])
+                i += 1
         prompt = ", ".join(prompt)
 
         msg = "The answers to the previous question were: \n"
