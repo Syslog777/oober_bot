@@ -32,14 +32,18 @@ def run(data, bot_info, send):
     if message == ".next":
         
         randomLine = lines[lineIndex].strip().split(",")
-        prompt = randomLine[0]
+        prompt = []
         answers = {}
         # loop backwards
         i = 1
-        while i < 15:
-            answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
-            i += 2
-        
+        while i < len(randomLine):
+            if i < 15:
+                answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
+                i += 2
+            else:
+                prompt.append(random line[-(i)])
+        prompt = ", ".join(prompt)
+
         msg = "The answers to the previous question were: \n"
         for key, value in answers.items():
             msg += str(key) + ": " + str(value) + "\n"
