@@ -10,6 +10,11 @@ def run(data, bot_info, send):
     print(line)
     lineIndex = int(line.strip())
     f.close()
+
+    if lineIndex == -1:
+        send("I just restarted :(", bot_info[0])
+        lineIndex = random.randint(0, len(lines))
+
     print("reading line index", lineIndex)
 
     help_message = "Help:\n.help  -->  This screen\n.test  -->  Try it!\nOtherwise, repeats your message."
@@ -30,8 +35,8 @@ def run(data, bot_info, send):
         prompt = randomLine[0]
         answers = {}
         i = 1
-        while i in range(len(randomLine)-1):
-            answers[randomLine[i].strip().lower()] = randomLine[i+1]
+        while i < 15
+            answers[randomLine[-(i)].strip().lower()] = randomLine[-(i+1)]
             i += 2
         
         msg = "The answers to the previous question were: \n"
