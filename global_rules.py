@@ -41,9 +41,9 @@ def run(data, bot_info, send):
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
             else:
-                prompt.append(randomLine[-(i)])
+                prompt.insert(0, randomLine[-(i)])
                 i += 1
-        prompt = ", ".join(list(prompt.reverse()))
+        prompt = ", ".join(prompt)
 
         msg = "The answers to the previous question were: \n"
         for key, value in answers.items():
@@ -66,11 +66,11 @@ def run(data, bot_info, send):
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
             else:
-                prompt.append(randomLine[-(i)])
+                prompt.insert(0, randomLine[-(i)])
                 i += 1
         print("i =", i)
         print("prompt =", prompt)
-        prompt = ", ".join(list(prompt.reverse()))
+        prompt = ", ".join(prompt)
         print("answers =", answers)
         msg = prompt
         send(msg, bot_info[0])
@@ -86,9 +86,9 @@ def run(data, bot_info, send):
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
             else:
-                prompt.append(randomLine[-(i)])
+                prompt.insert(0, randomLine[-(i)])
                 i += 1
-        prompt = ", ".join(list(prompt.reverse()))
+        prompt = ", ".join(prompt)
             
         print(answers)
 
