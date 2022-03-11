@@ -43,7 +43,7 @@ def run(data, bot_info, send):
             else:
                 prompt.append(randomLine[-(i)])
                 i += 1
-        prompt = ", ".join(prompt)
+        prompt = ", ".join(prompt.reverse())
 
         msg = "The answers to the previous question were: \n"
         for key, value in answers.items():
@@ -70,7 +70,7 @@ def run(data, bot_info, send):
                 i += 1
         print("i =", i)
         print("prompt =", prompt)
-        prompt = ", ".join(prompt)
+        prompt = ", ".join(prompt.reverse())
         print("answers =", answers)
         msg = prompt
         send(msg, bot_info[0])
@@ -88,7 +88,7 @@ def run(data, bot_info, send):
             else:
                 prompt.append(randomLine[-(i)])
                 i += 1
-        prompt = ", ".join(prompt)
+        prompt = ", ".join(prompt.reverse())
             
         print(answers)
 
