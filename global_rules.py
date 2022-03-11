@@ -34,8 +34,9 @@ def run(data, bot_info, send):
         randomLine = lines[lineIndex].strip().split(",")
         prompt = randomLine[0]
         answers = {}
+        # loop backwards
         i = 1
-        while i < 15
+        while i < 15:
             answers[randomLine[-(i)].strip().lower()] = randomLine[-(i+1)]
             i += 2
         
