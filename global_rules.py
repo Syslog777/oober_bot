@@ -37,7 +37,7 @@ def run(data, bot_info, send):
         # loop backwards
         i = 1
         while i < 15:
-            answers[randomLine[-(i)].strip().lower()] = randomLine[-(i+1)]
+            answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
             i += 2
         
         msg = "The answers to the previous question were: \n"
