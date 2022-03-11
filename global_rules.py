@@ -56,15 +56,18 @@ def run(data, bot_info, send):
         f.write(str(lineIndex))
         f.close()
         randomLine = lines[lineIndex].strip().split(",")
-        prompt = randomLine[0]
-        answers = []
+        prompt = []
+        answers = {}
+        # loop backwards
         i = 1
-        while i in range(len(randomLine)-1):
-            answers.append([randomLine[i], randomLine[i+1]])
-            i += 2
-
-        #print(prompt)
-        print(answers)
+        while i < len(randomLine):
+            if i < 15:
+                answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
+                i += 2
+            else:
+                prompt.append(randomLine[-(i)])
+                i += 1
+        prompt = ", ".join(prompt)
         msg = prompt
         send(msg, bot_info[0])
         
