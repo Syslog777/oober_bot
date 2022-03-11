@@ -68,7 +68,7 @@ def run(data, bot_info, send):
                 prompt.append(randomLine[-(i)])
                 i += 1
         prompt = ", ".join(prompt)
-        print(prompt)
+        print("prompt =", prompt)
         msg = prompt
         send(msg, bot_info[0])
         
