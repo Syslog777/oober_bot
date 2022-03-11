@@ -70,12 +70,18 @@ def run(data, bot_info, send):
         
     else:
         randomLine = lines[lineIndex].strip().split(",")
-        prompt = randomLine[0]
+        prompt = []
         answers = {}
+        # loop backwards
         i = 1
-        while i in range(len(randomLine)-1):
-            answers[randomLine[i].strip().lower()] = randomLine[i+1]
-            i += 2
+        while i < len(randomLine):
+            if i < 15:
+                answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
+                i += 2
+            else:
+                prompt.append(randomLine[-(i)])
+                i += 1
+        prompt = ", ".join(prompt)
             
         print(answers)
 
