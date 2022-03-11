@@ -37,7 +37,7 @@ def run(data, bot_info, send):
         # loop backwards
         i = 1
         while i < len(randomLine):
-            if i < 13:
+            if i < 14:
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
             else:
@@ -62,15 +62,16 @@ def run(data, bot_info, send):
         i = 1
         print(randomLine)
         while i < len(randomLine):
-            if i < 13:
+            if i < 14:
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
             else:
                 prompt.append(randomLine[-(i)])
                 i += 1
+        print("i =", i)
+        print("prompt =", prompt)
         prompt = ", ".join(prompt)
         print("answers =", answers)
-        print("prompt =", prompt)
         msg = prompt
         send(msg, bot_info[0])
         
@@ -81,7 +82,7 @@ def run(data, bot_info, send):
         # loop backwards
         i = 1
         while i < len(randomLine):
-            if i < 13:
+            if i < 14:
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
             else:
