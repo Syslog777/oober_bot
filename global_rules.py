@@ -36,7 +36,7 @@ def run(data, bot_info, send):
         answers = {}
         # loop backwards
         i = 1
-        while i < len(randomLine):
+        while i < len(randomLine)+1:
             if i < 14:
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
@@ -61,7 +61,7 @@ def run(data, bot_info, send):
         # loop backwards
         i = 1
         print(randomLine)
-        while i < len(randomLine):
+        while i < len(randomLine)+1:
             if i < 14:
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
@@ -81,7 +81,7 @@ def run(data, bot_info, send):
         answers = {}
         # loop backwards
         i = 1
-        while i < len(randomLine):
+        while i < len(randomLine)+1:
             if i < 14:
                 answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
                 i += 2
