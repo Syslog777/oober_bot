@@ -143,3 +143,9 @@ def run(data, bot_info, send_message):
     elif data['text'].lower() == '!test':
         send_message('I am in test mode, my functionality is subject to change', bot_info[0])
         return True
+    elif data['text'].lower() == '!request ride':
+        send_message('Sending a DM to all ghetto oober drivers. I am in test mode, my functionality is subject to change', bot_info[0])
+        return True
+    elif data['text'].lower() == '!report':
+        send_message('Sending you a link to our report form to your DMs. I am in test mode, my functionality is subject to change', bot_info[0])
+        return True
