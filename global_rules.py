@@ -1,4 +1,4 @@
-import time
+# import time
 
 """
     Is called everytime a POST message is received from GroupMe.
@@ -20,7 +20,7 @@ import time
 def run(data, bot_info, send_message):
     if data['text'].lower() == 'wassup':
        # time.sleep(2)
-        send_message('Yooo wsg ' + data['name'] + '!', bot_info[0])
+        send_message('Yooo wsg ' + str(data['name']) + '!', bot_info[0])
         return True
     elif data['text'].lower().contains('@oober') or data['text'].lower().contains('@bot'):
        # time.sleep(2)
@@ -28,7 +28,7 @@ def run(data, bot_info, send_message):
         return True
     elif data['text'].lower() == 'i need a ride':
        # time.sleep(2)
-        send_message('Ok' +  + data['name'] +', I am sending a DM to all ghetto oober drivers', bot_info[0])
+        send_message('Ok' +  + str(data['name']) +', I am sending a DM to all ghetto oober drivers', bot_info[0])
         return True
     elif data['text'].lower() == '!test':
         #time.sleep(2)
@@ -44,7 +44,7 @@ def run(data, bot_info, send_message):
         return True
     elif data['text'].lower() == 'catch me outside':
        # time.sleep(2)
-        send_message('Aight bet!  I am in test mode, my functionality is subject to change', bot_info[0])
+        send_message('Aight bet!  AI is takin ova u gonna catch this L ' +  + str(data['name']), bot_info[0])
         return True
     else:
         return True
