@@ -124,3 +124,19 @@ def webhook():
     GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
 
     return "ok", 200
+
+# rules example
+
+def run(data, bot_info, send_message):
+    if data['text'].lower() == 'wassup':
+        send_message('Yooo wsg fam!', bot_info[0])
+        return True
+    elif data['text'].lower() == 'Wassup':
+        send_message('Yooo wsg fam!', bot_info[0])
+        return True
+    elif data['text'].lower() == 'Hru':
+        send_message('I am running without errors, my mind (CPU) is clear and I\'m feeling great! 😄', bot_info[0])
+        return True
+    elif data['text'].lower() == 'I need a ride':
+        send_message('Ok, sending a DM to all ghetto oober drivers 🚙', bot_info[0])
+        return True
