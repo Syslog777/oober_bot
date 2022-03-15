@@ -1,104 +1,50 @@
-def run(data, bot_info, send):
-    
-    import random
-    random.seed()
-    f = open("FamilyFeudData.csv", "r", encoding="utf-8")
-    lines = f.readlines()
-    f.close()
-    f = open("lineIndex.txt", "r", encoding="utf-8")
-    line = f.readline()
-    print(line)
-    lineIndex = int(line.strip())
-    f.close()
+import time
 
-    if lineIndex == -1:
-        #send("I just restarted :(", bot_info[0])
-        lineIndex = random.randint(0, len(lines))
-
-    print("reading line index", lineIndex)
-
-    help_message = "Help:\n.help  -->  This screen\n.test  -->  Try it!\nOtherwise, repeats your message."
-
-    message = data['text']
-
-    if message == '.help':
-        send(help_message, bot_info[0])
+"""
+    Is called everytime a POST message is received from GroupMe.
+    data = {
+                "attachments": [],
+                "avatar_url": "https://i.groupme.com/123456789",
+                "created_at": 1302623328,
+                "group_id": "1234567890",
+                "id": "1234567890",
+                "name": "John",
+                "sender_id": "12345",
+                "sender_type": "user",
+                "source_guid": "GUID",
+                "system": false,
+                "text": "Hello world ☃☃",
+                "user_id": "1234567890"
+            }
+"""
+def run(data, bot_info, send_message):
+    if data['text'].lower() == 'wassup' + data['name']:
+       # time.sleep(2)
+        send_message('Yooo wsg fam!', bot_info[0])
         return True
-
-    if message == '.test':
-        send("Hi there! Your bot is working, you should start customizing it now.", bot_info[0])
+    elif data['text'].lower().contains('@oober') or data['text'].lower().contains('@bot'):
+       # time.sleep(2)
+        send_message('Wassup?', bot_info[0])
         return True
-    
-    if message == ".next":
-        
-        randomLine = lines[lineIndex].strip().split(",")
-        prompt = []
-        answers = {}
-        # loop backwards
-        i = 1
-        while i < len(randomLine)+1:
-            if i < 14:
-                answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
-                i += 2
-            else:
-                prompt.insert(0, randomLine[-(i)])
-                i += 1
-        prompt = ", ".join(prompt)
-
-        msg = "The answers to the previous question were: \n"
-        for key, value in answers.items():
-            msg += str(key) + ": " + str(value) + "\n"
-        send(msg, bot_info[0])
-        
-        lineIndex = random.randint(0, len(lines))
-        print("writing line index", lineIndex)
-        f = open("lineIndex.txt", "w", encoding="utf-8")
-        f.write(str(lineIndex))
-        f.close()
-        randomLine = lines[lineIndex].strip().split(",")
-        prompt = []
-        answers = {}
-        # loop backwards
-        i = 1
-        print(randomLine)
-        while i < len(randomLine)+1:
-            if i < 14:
-                answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
-                i += 2
-            else:
-                prompt.insert(0, randomLine[-(i)])
-                i += 1
-        print("i =", i)
-        print("prompt =", prompt)
-        prompt = ", ".join(prompt)
-        print("answers =", answers)
-        msg = prompt
-        send(msg, bot_info[0])
-        
+    elif data['text'].lower() == 'i need a ride':
+       # time.sleep(2)
+        send_message('Ok, sending a DM to all ghetto oober drivers', bot_info[0])
+        return True
+    elif data['text'].lower() == '!test':
+        #time.sleep(2)
+        send_message('I am in test mode, my functionality is subject to change', bot_info[0])
+        return True
+    elif data['text'].lower() == '!request ride':
+       # time.sleep(2)
+        send_message('Sending a DM to all ghetto oober drivers. I am in test mode, my functionality is subject to change', bot_info[0])
+        return True
+    elif data['text'].lower() == '!report':
+       # time.sleep(2)
+        send_message('Sending you a link to our report form to your DMs. I am in test mode, my functionality is subject to change', bot_info[0])
+        return True
+    elif data['text'].lower() == 'catch me outside':
+       # time.sleep(2)
+        send_message('Aight bet!  I am in test mode, my functionality is subject to change', bot_info[0])
+        return True
     else:
-        randomLine = lines[lineIndex].strip().split(",")
-        prompt = []
-        answers = {}
-        # loop backwards
-        i = 1
-        while i < len(randomLine)+1:
-            if i < 14:
-                answers[randomLine[-(i+1)].strip().lower()] = randomLine[-(i)]
-                i += 2
-            else:
-                prompt.insert(0, randomLine[-(i)])
-                i += 1
-        prompt = ", ".join(prompt)
-            
-        print(answers)
-
-        messageRaw = message
-        message = message.strip().lower()
-        if message in answers.keys():
-            score = answers[message]
-            send("Congratulations! {} is correct! {} points!".format(messageRaw, score), bot_info[0])
-
-        
-
-    #send("Hi {}! You said: {}".format(data['name'], data['text']), bot_info[0])
-    return True
+        return True
