@@ -12,7 +12,7 @@ def run(data, bot_info, send):
     f.close()
 
     if lineIndex == -1:
-        send("I just restarted :(", bot_info[0])
+        #send("I just restarted :(", bot_info[0])
         lineIndex = random.randint(0, len(lines))
 
     print("reading line index", lineIndex)
