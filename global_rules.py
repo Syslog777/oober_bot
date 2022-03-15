@@ -6,10 +6,10 @@ def run(data, bot_info, send_message):
         send_message('Yooo wsg fam!', bot_info[0])
         return True
     elif data['text'].lower() == 'hru':
-        send_message('I am running without errors, my mind (CPU) is clear and I\'m feeling great! 😄', bot_info[0])
+        send_message('I am running without errors, my mind (CPU) is clear and I\'m feeling great!', bot_info[0])
         return True
-    elif data['text'].lower() == 'I need a ride':
-        send_message('Ok, sending a DM to all ghetto oober drivers 🚙', bot_info[0])
+    elif data['text'].lower() == 'i need a ride':
+        send_message('Ok, sending a DM to all ghetto oober drivers', bot_info[0])
         return True
     elif data['text'].lower() == '!test':
         send_message('I am in test mode, my functionality is subject to change', bot_info[0])
