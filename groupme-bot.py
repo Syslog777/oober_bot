@@ -125,5 +125,5 @@ def webhook():
 
     return "ok", 200
 
-# rules example
+
 
