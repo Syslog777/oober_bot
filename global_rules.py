@@ -22,13 +22,13 @@ def run(data, bot_info, send_message):
        # time.sleep(2)
         send_message('Yooo wsg ' + str(data['name']) + '!', bot_info[0])
         return True
-    elif data['text'].lower().contains('@oober') or data['text'].lower().contains('@bot'):
+    elif data['text'].lower() == '@oober' or data['text'].lower() == '@bot':
        # time.sleep(2)
         send_message('Wassup?', bot_info[0])
         return True
     elif data['text'].lower() == 'i need a ride':
        # time.sleep(2)
-        send_message('Ok' +  + str(data['name']) +', I am sending a DM to all ghetto oober drivers', bot_info[0])
+        send_message('Ok ' +  + str(data['name']) +', I am sending a DM to all ghetto oober drivers', bot_info[0])
         return True
     elif data['text'].lower() == '!test':
         #time.sleep(2)

@@ -121,7 +121,10 @@ def webhook():
         if GROUP_RULES[data['group_id']].run(data, BOT_INFO[data['group_id']], send_message):
             return "ok", 200
 
-    GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
+    try: 
+        GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
+    except Exception as e:
+        send_message(e.message, BOT_INFO[data['group_id']][0])
 
     return "ok", 200
 
