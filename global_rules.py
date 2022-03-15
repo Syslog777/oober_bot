@@ -22,13 +22,9 @@ def run(data, bot_info, send_message):
         time.sleep(2)
         send_message('Yooo wsg fam!', bot_info[0])
         return True
-    elif data['text'].lower() == 'wassup':
+    elif data['text'].lower().contains('@oober') or data['text'].lower().contains('@bot'):
         time.sleep(2)
-        send_message('Yooo wsg fam!', bot_info[0])
-        return True
-    elif data['text'].lower() == 'hru':
-        time.sleep(2)
-        send_message('I am running without errors, my mind (CPU) is clear and I\'m feeling great!', bot_info[0])
+        send_message('Wassup?', bot_info[0])
         return True
     elif data['text'].lower() == 'i need a ride':
         time.sleep(2)
