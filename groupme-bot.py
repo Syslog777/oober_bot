@@ -150,4 +150,4 @@ def run(data, bot_info, send_message):
         send_message('Sending you a link to our report form to your DMs. I am in test mode, my functionality is subject to change', bot_info[0])
         return True
     else:
-        return true
+        return True
