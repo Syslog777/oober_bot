@@ -125,3 +125,23 @@ Ensure you are in the correct directory
 $ git commit -am "Created custom rules"
 $ git push
 ```
+
+### Commands
+
+#### General-Purpose
+
+- `!ping` - displays latency between the bot and GroupMe servers
+- `!report` - sends a report form to the user
+- `!getreviewform` - sends the user a DM with a link to the review form
+- `!getreportform` - sends the user a DM with a link to the report form
+- `!getsignupform` - sends the user a DM with a link to the signup form
+- `!available drivers` - lists available drivers
+
+#### Drivers-Only
+
+- `!available [optional message]` - sets driver status as available; they will show in list of available drivers along with their status
+- `!unavailable [optional message]` - sets driver status as unavailable; they will show in list of unavailable drivers
+
+#### Admin-Only
+
+- `!blacklist` - blacklists a user given their username
