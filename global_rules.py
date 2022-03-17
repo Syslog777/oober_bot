@@ -62,7 +62,7 @@ def bot_chat(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('catch me outside'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Aight bet! U gonna catch this L >:)' +  + str(data['name']), bot_info[0])
+        send_message('Aight bet! U gonna catch this L >:)' + str(data['name']), bot_info[0])
         return True
     elif data['text'].casefold().__contains__('black women bomb asf'):
         time.sleep(REPLY_PAUSE_SECONDS)
