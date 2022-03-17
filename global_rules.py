@@ -11,6 +11,7 @@ class BotCommands(enum.Enum):
     reviewdriver = '!reviewdriver'
 
 def get_ping_time(host):
+    responce_time = 0
     try:
         output = subprocess.check_output(['ping', '-c', '4', '-q', host])
         output = output.decode('utf8')
