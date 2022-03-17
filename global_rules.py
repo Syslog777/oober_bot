@@ -5,7 +5,7 @@ import subprocess
 from pythonping import ping
 
 
-REPLY_PAUSE_SECONDS = 0
+REPLY_PAUSE_SECONDS = 0.5
 COMMAND_PREFIX = '!'
 
 class BotCommands(enum.Enum):
