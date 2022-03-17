@@ -2,6 +2,8 @@ import time
 import re
 import enum
 import subprocess
+from pythonping import ping
+
 
 REPLY_PAUSE_SECONDS = 0
 COMMAND_PREFIX = '!'
@@ -13,17 +15,13 @@ class BotCommands(enum.Enum):
     reviewdriver = '!reviewdriver'
 
 def get_ping_time(host):
-    responce_time = 0
+    ping_responce = 0
     try:
-        output = subprocess.check_output(['ping', '-c', '4', '-q', host])
-        output = output.decode('utf8')
-        statistic = re.search(r'(\d+\.\d+/){3}\d+\.\d+', output).group(0)
-        avg_time = re.findall(r'\d+\.\d+', statistic)[1]
-        response_time = float(avg_time) 
+        ping_responce = ping('groupme.com', verbose=True)
     except subprocess.CalledProcessError:
-        response_time = 99999999
+        ping_responce = 99999999
         
-    return response_time
+    return ping_responce.rtt_avg_ms
 
 """
     For commands only
@@ -43,7 +41,7 @@ def bot_command(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('!review'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Sending you a link to our review form to your DMs.', bot_info[0])
+        send_message('If you wanna to review a driver, fill out this form: https://forms.gle/V29rVVwKSp8HhQFm7', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('!signup'):
         time.sleep(REPLY_PAUSE_SECONDS)
