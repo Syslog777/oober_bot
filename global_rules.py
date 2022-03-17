@@ -33,19 +33,19 @@ def bot_command(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Success! (200)', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__str('!ping'):
+    elif data['text'].casefold().__contains__('!ping'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Pong! in ' + str(get_ping_time('groupme.com')) + ' ms', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__str('!report'):
+    elif data['text'].casefold().__contains__('!report'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Sending you a link to our report form to your DMs.', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__str('!review'):
+    elif data['text'].casefold().__contains__('!review'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Sending you a link to our review form to your DMs.', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__str('!signup'):
+    elif data['text'].casefold().__contains__('!signup'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Sending you a link to our signup form to your DMs.', bot_info[0])
         return True
