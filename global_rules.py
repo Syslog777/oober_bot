@@ -86,7 +86,7 @@ def run(data, bot_info, send_message):
             bot_chat(data, bot_info, send_message)
     except Exception as e:
         if hasattr(e, 'message'):
-            print(e.message)
+            print("Error messagee => " + e.message)
         else:
             print(e)
         
