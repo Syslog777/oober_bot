@@ -124,6 +124,8 @@ def webhook():
     GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
 
     return "ok", 200
+        
+        
 
-
+    
 
