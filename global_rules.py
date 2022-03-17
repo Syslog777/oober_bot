@@ -79,7 +79,7 @@ def bot_chat(data, bot_info, send_message):
 """
 def run(data, bot_info, send_message):
     try:
-        if data['text'][0] == '!':
+        if data['text'][0] is '!':
             bot_command(data, bot_info, send_message)
         else:
             bot_chat(data, bot_info, send_message)
