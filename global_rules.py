@@ -3,7 +3,7 @@ import re
 import enum
 import subprocess
 
-REPLY_PAUSE_SECONDS = 0.5
+REPLY_PAUSE_SECONDS = 0
 class BotCommands(enum.Enum):
     test = '!test'
     ping = '!ping'
