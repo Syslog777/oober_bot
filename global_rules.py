@@ -27,7 +27,7 @@ def get_ping_time(host):
     For commands only
 """
 def bot_command(data, bot_info, send_message):
-    if data['text'].casefold() is str(BotCommands.test):
+    if data['text'].casefold().contains(str(BotCommands.test)):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Success! (200)', bot_info[0])
         return True
