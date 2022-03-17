@@ -52,18 +52,29 @@ def bot_command(data, bot_info, send_message):
     Regular chatting
 """ 
 def bot_chat(data, bot_info, send_message):
-    if data['text'].casefold().__eq__('Wassup'.casefold()):
+    if data['text'].casefold().__contains__('wassup'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Yooo wsg ' + str(data['name']) + '!', bot_info[0])
         return True
-    elif data['text'].casefold().__eq__('@oober'.casefold()):
+    elif data['text'].casefold().__contains__('@oober'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Wassup?', bot_info[0])
+        send_message('Hmmm?', bot_info[0])
         return True
-   
-    elif data['text'].casefold().__eq__('@oober catch me outside'):
+    elif data['text'].casefold().__contains__('catch me outside'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Aight bet! U gonna catch this L >:)' +  + str(data['name']), bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('black women bomb asf'):
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message('Ong bruh but they be a lil crazy', bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('uber eats'):
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message('Join the ghetto uber if u want some food mayneeee: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('ghetto uber'):
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message('Join the ghetto uber groupme we in there homie: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
         return True
     else:
         return True
