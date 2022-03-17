@@ -28,15 +28,15 @@ def get_ping_time(host):
 """
 def bot_command(data, bot_info, send_message):
     if data['text'].casefold().__eq__(str(BotCommands.test)):
-        time.sleep(REPLY_PAUSE_SECONDS)
+        #time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Success! (200)', bot_info[0])
         return True
     elif data['text'].casefold().__eq__(str(BotCommands.ping)):
-        time.sleep(REPLY_PAUSE_SECONDS)
+        #time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Pong! in ' + str(get_ping_time('groupme.com')) + ' ms', bot_info[0])
         return True
     elif data['text'].casefold().__eq__(str(BotCommands.report)):
-        time.sleep(REPLY_PAUSE_SECONDS)
+        #time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Sending you a link to our report form to your DMs.', bot_info[0])
         return True
     
@@ -55,7 +55,7 @@ def bot_chat(data, bot_info, send_message):
    
     elif data['text'].lower() == '@oober catch me outside':
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Aight bet!  AI is takin ova u gonna catch this L ' +  + str(data['name']), bot_info[0])
+        send_message('Aight bet! U gonna catch this L >:)' +  + str(data['name']), bot_info[0])
         return True
     else:
         return True
