@@ -18,7 +18,6 @@ def get_ping_time(host):
         statistic = re.search(r'(\d+\.\d+/){3}\d+\.\d+', output).group(0)
         avg_time = re.findall(r'\d+\.\d+', statistic)[1]
         response_time = float(avg_time) 
-
     except subprocess.CalledProcessError:
         response_time = 99999999
         
@@ -34,7 +33,7 @@ def bot_command(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__eq__(str(BotCommands.ping)):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Pong! in ' + str(get_ping_time('web.groupme.com')) + ' ms', bot_info[0])
+        send_message('Pong! in ' + str(get_ping_time('groupme.com')) + ' ms', bot_info[0])
         return True
     elif data['text'].casefold().__eq__(str(BotCommands.report)):
         time.sleep(REPLY_PAUSE_SECONDS)
