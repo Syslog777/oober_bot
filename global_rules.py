@@ -79,12 +79,16 @@ def bot_chat(data, bot_info, send_message):
 """
 def run(data, bot_info, send_message):
     try:
-        if data['text'][0].__eq__('!'):
+        if data['text'][0] == '!':
             bot_command(data, bot_info, send_message)
         else:
             bot_chat(data, bot_info, send_message)
     except Exception as e:
-        send_message(e.message, bot_info[0])
+        if hasattr(e, 'message'):
+            print(e.message)
+        else:
+            print(e)
+        
         
         
    
