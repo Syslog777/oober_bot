@@ -45,7 +45,7 @@ def bot_command(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('!signup'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Sending you a link to our signup form to your DMs.', bot_info[0])
+        send_message('You do ghetto oobers and wanna be included in our listings? Aight, fill this out https://forms.gle/qFyivFh2C9Hsyjr59', bot_info[0])
         return True
     
 """
