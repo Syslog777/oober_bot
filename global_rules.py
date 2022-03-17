@@ -89,6 +89,6 @@ def run(data, bot_info, send_message):
         else:
             print(e)
         
-        
+    print("First char is " + str(data['text'][0]))
         
    
