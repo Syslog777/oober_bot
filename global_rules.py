@@ -84,7 +84,7 @@ def bot_chat(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Yeah you got a big head', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('why are gas prices so damn high?'):
+    elif data['text'].casefold().__contains__('why are gas prices so high?'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Cause they want moe money', bot_info[0])
         return True
