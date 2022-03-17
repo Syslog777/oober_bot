@@ -53,7 +53,7 @@ def bot_chat(data, bot_info, send_message):
         send_message('Wassup?', bot_info[0])
         return True
    
-    elif data['text'].lower() == '@oober catch me outside':
+    elif data['text'].casefold().__eq__('@oober catch me outside'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Aight bet! U gonna catch this L >:)' +  + str(data['name']), bot_info[0])
         return True
