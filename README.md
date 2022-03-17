@@ -132,9 +132,9 @@ $ git push
 
 - `!ping` - displays latency between the bot and GroupMe servers
 - `!report` - sends a report form to the user
-- `!getreviewform` - sends the user a DM with a link to the review form
-- `!getreportform` - sends the user a DM with a link to the report form
-- `!getsignupform` - sends the user a DM with a link to the signup form
+- `!review` - sends the user a DM with a link to the review form
+- `!report` - sends the user a DM with a link to the report form
+- `!signup` - sends the user a DM with a link to the signup form
 - `!available drivers` - lists available drivers
 
 #### Drivers-Only
