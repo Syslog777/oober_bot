@@ -74,7 +74,11 @@ def bot_chat(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('ghetto uber'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Join the ghetto uber groupme we in there homie: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
+        send_message('Join the ghetto uber groupme! We in there homie: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
+        return 
+    elif data['text'].casefold().__contains__('hungry'):
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message('I be hungry too mane-', bot_info[0])
         return True
     else:
         return True
