@@ -8,9 +8,11 @@ import sys
 import requests
 import importlib
 from flask import Flask, request
+import time
 
 #######################################################################################################
 ######################## Customization ################################################################
+THREAD_PAUSE_MINUTES = 15
 
 '''
 The bot will automatically log certain items, and log other items when DEBUG is set.
@@ -125,7 +127,9 @@ def webhook():
 
     return "ok", 200
         
-        
-
-    
-
+while True:
+    time.sleep(THREAD_PAUSE_MINUTES*60)
+    for group in BOT_INFO:
+        bot_id = group[0]
+        bot_name = group[1]
+        send_message(msg, BOT_INFO[])

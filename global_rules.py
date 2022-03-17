@@ -8,12 +8,6 @@ from pythonping import ping
 REPLY_PAUSE_SECONDS = 0.5
 COMMAND_PREFIX = '!'
 
-class BotCommands(enum.Enum):
-    test = '!test'
-    ping = '!ping'
-    report = '!report'
-    reviewdriver = '!reviewdriver'
-
 def get_ping_time(host):
     ping_responce = 0
     try:
@@ -37,7 +31,7 @@ def bot_command(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('!report'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Sending you a link to our report form to your DMs.', bot_info[0])
+        send_message('If you wanna report someone in the ghetto oober group, fill out this form: https://forms.gle/C79FVLcdfJw3Yq5r9', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('!review'):
         time.sleep(REPLY_PAUSE_SECONDS)
@@ -62,7 +56,7 @@ def bot_chat(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('catch me outside'):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Aight bet! U gonna catch this L >:)' + str(data['name']), bot_info[0])
+        send_message('Aight bet! U gonna catch this L >:) ' + str(data['name']), bot_info[0])
         return True
     elif data['text'].casefold().__contains__('black women bomb asf'):
         time.sleep(REPLY_PAUSE_SECONDS)
@@ -72,10 +66,10 @@ def bot_chat(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Join the ghetto uber if u want some food mayneeee: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('ghetto uber'):
+    elif data['text'].casefold().__contains__('ghetto uber?'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Join the ghetto uber groupme! We in there homie: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
-        return 
+        return True
     elif data['text'].casefold().__contains__('hungry'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('I be hungry too mane-', bot_info[0])
@@ -121,6 +115,6 @@ def run(data, bot_info, send_message):
         else:
             print(e)
         
-    
+
         
    
