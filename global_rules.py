@@ -101,7 +101,7 @@ def bot_chat(data, bot_info, send_message):
         return True
     elif data['text'].casefold().__contains__('ghetto uber?'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message('Hey ' + str(data['name']) ', try typing !list  to get a list of available drivers', bot_info[0])
+        send_message('Hey ' + str(data['name']) + ', try typing !list  to get a list of available drivers', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('hungry'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
