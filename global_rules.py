@@ -12,8 +12,9 @@ drivers = {}
 def setstatusonline(name, status):
     drivers[name] = status
    
-def setstatusoffline(name, status):
-    drivers.pop(name)
+def setstatusoffline(name):
+    if name in drivers:
+        drivers.pop(name)
 
 def get_ping_time(host):
     ping_responce = 0
@@ -59,7 +60,7 @@ def bot_command(data, bot_info, send_message):
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return 
     elif data['text'].casefold().__contains__('!unavailable'.casefold()):
-        setstatusoffline(str(data['name']), None)
+        setstatusoffline(str(data['name']))
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return 
