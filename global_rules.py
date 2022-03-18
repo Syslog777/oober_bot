@@ -47,6 +47,26 @@ def bot_command(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('You do ghetto oobers and wanna be included in our listings? Aight, fill this out https://forms.gle/qFyivFh2C9Hsyjr59', bot_info[0])
         return True
+    elif data['text'].casefold().__contains__('!available'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as available', bot_info[0])
+        return 
+    elif data['text'].casefold().__contains__('!online'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as available', bot_info[0])
+        return 
+    elif data['text'].casefold().__contains__('!unavailable'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
+        return 
+    elif data['text'].casefold().__contains__('!offline'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
+        return 
     
 """
     Regular chatting
@@ -97,6 +117,21 @@ def bot_chat(data, bot_info, send_message):
         setstatus(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
+        return 
+    elif data['text'].casefold().__contains__('not doing anymore ubers'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('done for tonight'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('done for the day'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return True
     else:
         return True
