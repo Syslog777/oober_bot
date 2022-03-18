@@ -157,7 +157,7 @@ def bot_chat(data, bot_info, send_message):
 """
 def run(data, bot_info, send_message):
     try:
-        if data['text'][0] is '!':
+        if data['text'][0] is COMMAND_PREFIX:
             print("Bot command detected because the first char is " + str(data['text'][0]) )
             bot_command(data, bot_info, send_message)
         else:
