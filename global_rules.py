@@ -52,48 +52,48 @@ def bot_command(data, bot_info, send_message):
     Regular chatting
 """ 
 def bot_chat(data, bot_info, send_message):
-    if data['text'].casefold().__contains__('wassup'):
+    if data['text'].casefold().__contains__('wassup'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Yooo wsg ' + str(data['name']) + '!', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('@oober'):
+    elif data['text'].casefold().__contains__('@oober'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Hmmm?', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('catch me outside'):
+    elif data['text'].casefold().__contains__('catch me outside'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Aight bet! U gonna catch this L >:) ' + str(data['name']), bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('black women bomb asf'):
+    elif data['text'].casefold().__contains__('black women bomb asf'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Ong bruh but they be a lil crazy', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('uber eats'):
+    elif data['text'].casefold().__contains__('uber eats'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Join the ghetto uber if u want some food mayneeee: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('ghetto uber?'):
+    elif data['text'].casefold().__contains__('ghetto uber?'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Join the ghetto uber groupme! We in there homie: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('hungry'):
+    elif data['text'].casefold().__contains__('hungry'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('I be hungry too mane-', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('is my head big'):
+    elif data['text'].casefold().__contains__('is my head big'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Yeah you got a big head', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('why are gas prices so high?'):
+    elif data['text'].casefold().__contains__('why are gas prices so high?'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Cause they want moe money', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('I\'m available'):
+    elif data['text'].casefold().__contains__('I\'m available'.casefold()):
         setstatus(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('doing ghetto ubers'):
+    elif data['text'].casefold().__contains__('doing ghetto ubers'.casefold()):
         setstatus(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
