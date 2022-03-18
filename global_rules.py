@@ -7,6 +7,11 @@ from pythonping import ping
 
 REPLY_PAUSE_SECONDS = 0.5
 COMMAND_PREFIX = '!'
+drivers = {}
+
+def setstatus(name, status):
+    drivers[name] = status
+    
 
 def get_ping_time(host):
     ping_responce = 0
@@ -16,6 +21,7 @@ def get_ping_time(host):
         ping_responce = 99999999
         
     return ping_responce.rtt_avg_ms
+
 
 """
     For commands only
@@ -81,6 +87,16 @@ def bot_chat(data, bot_info, send_message):
     elif data['text'].casefold().__contains__('why are gas prices so high?'):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Cause they want moe money', bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('I\'m available'):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as available', bot_info[0])
+        return True
+    elif data['text'].casefold().__contains__('I\'m doing ghetto ubers'):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return True
     else:
         return True
