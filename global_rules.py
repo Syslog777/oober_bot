@@ -115,22 +115,22 @@ def bot_chat(data, bot_info, send_message):
         send_message('Cause they want moe money', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('I\'m available'.casefold()):
-        setstatus(str(data['name']), data['text'])
+        setstatusonline(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('doing ghetto ubers'.casefold()) or data['text'].casefold().__contains__('Hmu doing rides'.casefold()):     
-        setstatus(str(data['name']), data['text'])
+        setstatusonline(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return 
     elif data['text'].casefold().__contains__('not doing anymore ubers'.casefold()) or data['text'].casefold().__contains__('I\'m done'.casefold()):
-        setstatus(str(data['name']), data['text'])
+        setstatusoffline(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('done for tonight'.casefold()) or data['text'].casefold().__contains__('done for the day'.casefold()):
-        setstatus(str(data['name']), data['text'])
+        setstatusoffline(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return True
