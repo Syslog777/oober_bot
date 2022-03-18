@@ -93,7 +93,7 @@ def bot_chat(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('I\'m doing ghetto ubers'):
+    elif data['text'].casefold().__contains__('doing ghetto ubers'):
         setstatus(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
