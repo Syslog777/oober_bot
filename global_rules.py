@@ -22,7 +22,6 @@ def get_ping_time(host):
         
     return ping_responce.rtt_avg_ms
 
-
 """
     For commands only
 """
