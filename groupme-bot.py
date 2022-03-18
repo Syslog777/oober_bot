@@ -127,9 +127,11 @@ def webhook():
 
     return "ok", 200
         
+""" 
 while True:
     time.sleep(THREAD_PAUSE_MINUTES*60)
     for group in BOT_INFO:
         bot_id = group[0]
         bot_name = group[1]
         send_message(msg, BOT_INFO[])
+"""
