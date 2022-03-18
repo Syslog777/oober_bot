@@ -135,6 +135,7 @@ def webhook():
                     build_str = build_str + driver_name + ': \"' + GLOBAL_RULES.drivers[driver_name] + '\"' + '\n'
                     
                 send_message('-------List of available ghetto uber drivers-------' + '\n' + build_str, bot_id)
+        return "ok", 200
 
     GLOBAL_RULES.run(data, BOT_INFO[data['group_id']], send_message)
 
