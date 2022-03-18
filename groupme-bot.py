@@ -12,7 +12,7 @@ import time
 
 #######################################################################################################
 ######################## Customization ################################################################
-THREAD_PAUSE_MINUTES = 15
+THREAD_PAUSE_MINUTES = 150
 
 '''
 The bot will automatically log certain items, and log other items when DEBUG is set.
