@@ -67,6 +67,20 @@ def bot_command(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return 
+    elif data['text'].casefold().__contains__('!spacewall'.casefold()):
+        setstatus(str(data['name']), data['text'])
+        time.sleep(REPLY_PAUSE_SECONDS)
+        for i in range(200):
+            send_message('''\n
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         ''', bot_info[0])
+        return 
     
 """
     Regular chatting
@@ -88,7 +102,7 @@ def bot_chat(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Ong bruh but they be a lil crazy', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('uber eats'.casefold()):
+    elif data['text'].casefold().__contains__('uber eats?'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message('Join the ghetto uber if u want some food mayneeee: https://groupme.com/join_group/70645352/HVAbgYqn', bot_info[0])
         return True
