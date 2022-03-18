@@ -127,11 +127,18 @@ def webhook():
 
     return "ok", 200
         
-""" 
+
 while True:
     time.sleep(THREAD_PAUSE_MINUTES*60)
-    for group in BOT_INFO:
-        bot_id = group[0]
-        bot_name = group[1]
-        send_message(msg, BOT_INFO[])
-"""
+    group_ids = list(BOT_INFO.keys())
+    
+    for group_id in group_ids:
+        bot_id = BOT_INFO[group_id][0]
+        bot_name = BOT_INFO[group_id][1]
+        build_str = "" 
+        
+        # build the string up
+        for driver_name in GLOBAL_RULES.drivers:
+            build_str = build_str + driver_name + ': \"' + GLOBAL_RULES.drivers[driver_name] + '\"' + '\n'
+            
+        send_message('-------List of available ghetto uber drivers-------' + '\n' + build_str, bot_id)
