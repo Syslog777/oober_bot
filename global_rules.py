@@ -65,7 +65,7 @@ def bot_command(data, bot_info, send_message):
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return 
     elif data['text'].casefold().__contains__('!offline'.casefold()):
-        setstatusoffline(str(data['name']), data['text'])
+        setstatusoffline(str(data['name']))
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return 
@@ -126,12 +126,12 @@ def bot_chat(data, bot_info, send_message):
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return 
     elif data['text'].casefold().__contains__('not doing anymore ubers'.casefold()) or data['text'].casefold().__contains__('I\'m done'.casefold()):
-        setstatusoffline(str(data['name']), data['text'])
+        setstatusoffline(str(data['name']))
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return True
     elif data['text'].casefold().__contains__('done for tonight'.casefold()) or data['text'].casefold().__contains__('done for the day'.casefold()):
-        setstatusoffline(str(data['name']), data['text'])
+        setstatusoffline(str(data['name']))
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
         return True
