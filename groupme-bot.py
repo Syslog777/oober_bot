@@ -127,7 +127,8 @@ def webhook():
 
     return "ok", 200
         
-count = 0
+    """
+    count = 0
 while True:
     time.sleep(THREAD_PAUSE_MINUTES*60)
     group_ids = list(BOT_INFO.keys())
@@ -143,3 +144,4 @@ while True:
             
         send_message('-------List of available ghetto uber drivers-------' + '\n' + build_str, bot_id)
     print('Bot execution cycle ' + str(count))
+    """
