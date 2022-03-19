@@ -2,6 +2,7 @@ import time
 import re
 import enum
 import subprocess
+import json
 from pythonping import ping
 
 
@@ -9,6 +10,31 @@ REPLY_PAUSE_SECONDS = 0.5
 COMMAND_PREFIX = '!'
 drivers = {}
 
+try:
+    # Load from file if save exists
+    with open('drivers.json') as json_file:
+        data = json.load(json_file)
+        drivers = data or {} #if data is of type None then make a new dictionary
+except Exception as e:
+        if hasattr(e, 'message'):
+            print("Error messagee => " + e.message)
+        else:
+            print(e)
+            
+def save_driver_to_file():
+    # create json object from dictionary
+    json_data = json.dumps(drivers)
+
+    # open file for writing, "w" 
+    f = open("drivers.json","w")
+
+    # write json object to file
+    f.write(json_data)
+
+    # close file
+    f.close()
+
+    
 def setstatusonline(name, status):
     drivers[name] = status
    
