@@ -100,7 +100,7 @@ def bot_command(data, bot_info, send_message):
         send_message('.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n', bot_info[0])
         return 
     elif data['text'].casefold().__contains__('!setstatus'.casefold()):
-        name = str(data['text'])[len('!setstatus')] #substring
+        name = str(data['text'])[len('!setstatus')-1] #substring
         setstatusonline(name)
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set '  + name + '\'s' + ' status as available', bot_info[0])
