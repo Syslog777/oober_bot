@@ -120,7 +120,7 @@ def bot_chat(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
         return True
-    elif data['text'].casefold().__contains__('doing ghetto ubers'.casefold()) or data['text'].casefold().__contains__('Hmu doing rides'.casefold()):     
+    elif data['text'].casefold().__contains__('$'.casefold()) or data['text'].casefold().__contains__('Hmu doing rides'.casefold()):     
         setstatusonline(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available', bot_info[0])
