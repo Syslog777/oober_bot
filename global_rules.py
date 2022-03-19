@@ -71,8 +71,7 @@ def bot_command(data, bot_info, send_message):
         return 
     elif data['text'].casefold().__contains__('!spacewall'.casefold()):
         time.sleep(REPLY_PAUSE_SECONDS)
-        for i in range(200):
-            send_message('\n', bot_info[0])
+        send_message('.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n', bot_info[0])
         return 
     
 """
@@ -123,7 +122,7 @@ def bot_chat(data, bot_info, send_message):
     elif data['text'].casefold().__contains__('$'.casefold()) or data['text'].casefold().__contains__('Hmu doing rides'.casefold()):     
         setstatusonline(str(data['name']), data['text'])
         time.sleep(REPLY_PAUSE_SECONDS)
-        send_message(str(data['name']) + ', I set your status as available', bot_info[0])
+        send_message(str(data['name']) + ', I set your status as available and listed', bot_info[0])
         return 
     elif data['text'].casefold().__contains__('not doing anymore ubers'.casefold()) or data['text'].casefold().__contains__('I\'m done'.casefold()):
         setstatusoffline(str(data['name']))
