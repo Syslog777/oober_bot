@@ -3,16 +3,24 @@ import re
 import enum
 import subprocess
 import json
+from os.path import exists
 from pythonping import ping
 
 
 REPLY_PAUSE_SECONDS = 0.5
 COMMAND_PREFIX = '!'
 drivers = {}
+driver_file_path = 'drivers.json'
 
 try:
-    # Load from file if save exists
-    with open('drivers.json') as json_file:
+    if exists(driver_file_path) is not True:
+         # open file for writing, "w" 
+        f = open("drivers.json","w")
+        # close file
+        f.close()
+        print('drivers.json did not exist, so I create a new one')
+    # Load the file
+    with open(driver_file_path) as json_file:
         data = json.load(json_file)
         drivers = data or {} #if data is of type None then make a new dictionary
 except Exception as e:
