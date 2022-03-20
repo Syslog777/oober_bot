@@ -136,7 +136,7 @@ def webhook():
                     
                 send_message('-------List of available ghetto uber drivers-------' + '\n' + build_str, bot_id)
         return "ok", 200
-    elif data['name'].casefold().__contains__('Talib') and data['text'].casefold().__contains__('!shutdown'):
+    elif data['text'].casefold().__contains__('!shutdown'):
         send_message('Running shutdown procedure...\nWriting volatile data to savefile...', bot_id)
         GLOBAL_RULES.save_driver_to_file()
         return "ok", 200

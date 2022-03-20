@@ -164,7 +164,7 @@ def bot_chat(data, bot_info, send_message):
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as available and listed', bot_info[0])
         return 
-    elif data['text'].casefold().__contains__('not doing anymore ubers'.casefold()) or data['text'].casefold().__contains__('I\'m done'.casefold()):
+    elif data['text'].casefold().__contains__('I\'m done'.casefold()) or data['text'].casefold().__contains__('I\'m done'.casefold()):
         setstatusoffline(str(data['name']))
         time.sleep(REPLY_PAUSE_SECONDS)
         send_message(str(data['name']) + ', I set your status as unavailable', bot_info[0])
